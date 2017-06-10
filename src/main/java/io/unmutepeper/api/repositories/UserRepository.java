@@ -13,6 +13,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
-    List<User> findBySmile(@Param("smile") float smile);
+    List<User> findByAge(@Param("age") float age);
 
 }
