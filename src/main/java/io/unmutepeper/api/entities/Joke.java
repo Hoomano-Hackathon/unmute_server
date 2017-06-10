@@ -1,11 +1,8 @@
 package io.unmutepeper.api.entities;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
-
-/**
- * Created by Guyl Bastien on 10/06/2017.
- */
 
 @Entity
 public class Joke {
@@ -15,13 +12,16 @@ public class Joke {
     private long id;
 
     private String lang;
-    private String title;
-    private String joke;
-    private String category;
-    private String rank;
+    private Boolean isAnswer;
+    private String content;
+    private String answer;
+    private Date created_at;
 
     @OneToMany(mappedBy = "joke")
     private List<Reaction> reactions;
+
+    @ManyToOne
+    private Agent agent;
 
     public long getId() {
         return id;
@@ -39,36 +39,48 @@ public class Joke {
         this.lang = lang;
     }
 
-    public String getTitle() {
-        return title;
+    public Boolean getAnswer() {
+        return isAnswer;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
-    public String getJoke() {
-        return joke;
+    public Date getCreated_at() {
+        return created_at;
     }
 
-    public void setJoke(String joke) {
-        this.joke = joke;
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
     }
 
-    public String getCategory() {
-        return category;
+    public List<Reaction> getReactions() {
+        return reactions;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setReactions(List<Reaction> reactions) {
+        this.reactions = reactions;
     }
 
-    public String getRank() {
-        return rank;
+    public Agent getAgent() {
+        return agent;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
+    public void setAnswer(Boolean answer) {
+        isAnswer = answer;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
 

@@ -5,10 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by Guyl Bastien on 10/06/2017.
- */
-
 @Entity
 public class User {
 
@@ -16,7 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private float age;
+    private int age;
     private String sex;
 
     public long getId() {
@@ -27,11 +23,11 @@ public class User {
         this.id = id;
     }
 
-    public float getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(float age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

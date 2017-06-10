@@ -2,10 +2,6 @@ package io.unmutepeper.api.entities;
 
 import javax.persistence.*;
 
-/**
- * Created by Guyl Bastien on 10/06/2017.
- */
-
 @Entity
 public class Reaction {
 
@@ -15,6 +11,7 @@ public class Reaction {
 
     @ManyToOne
     private User user;
+
     @ManyToOne
     private Joke joke;
     private float smile;

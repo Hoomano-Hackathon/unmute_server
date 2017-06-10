@@ -7,9 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
-/**
- * Created by Guyl Bastien on 10/06/2017.
- */
 @RepositoryRestResource(collectionResourceRel = "reactions", path = "reactions")
 public interface ReactionRepository extends PagingAndSortingRepository<Reaction, Long> {
 

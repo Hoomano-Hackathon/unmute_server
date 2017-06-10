@@ -7,12 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
-/**
- * Created by Guyl Bastien on 10/06/2017.
- */
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
-    List<User> findByAge(@Param("age") float age);
+    List<User> findByAge(@Param("age") int age);
 
 }
