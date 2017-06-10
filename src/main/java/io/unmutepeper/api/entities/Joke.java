@@ -1,9 +1,7 @@
 package io.unmutepeper.api.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Guyl Bastien on 10/06/2017.
@@ -20,6 +18,10 @@ public class Joke {
     private String title;
     private String joke;
     private String category;
+    private String rank;
+
+    @OneToMany(mappedBy = "joke")
+    private List<Reaction> reactions;
 
     public long getId() {
         return id;
@@ -59,6 +61,14 @@ public class Joke {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 }
 
